@@ -8,8 +8,6 @@ package br.edu.ifms.loja.itemvenda.datamodel;
 import br.edu.ifms.loja.produto.datamodel.Produto;
 import br.edu.ifms.loja.venda.datamodel.Venda;
 import java.math.BigDecimal;
-import java.util.List;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +18,7 @@ import javax.persistence.ManyToOne;
  *
  * @author djgiu
  */
-@Entity(name = "TB_ITEM_VENDA")
+@Entity
 public class ItemVenda {
     
     @Id
@@ -29,9 +27,9 @@ public class ItemVenda {
     private BigDecimal valorVenda;
     private Integer qtdeVenda;
     @ManyToOne
-    private Produto produtos;
+    private Produto produto;
     @ManyToOne
-    private Venda vendas;
+    private Venda venda;
 
     public Integer getId() {
         return id;
@@ -57,20 +55,20 @@ public class ItemVenda {
         this.qtdeVenda = qtdeVenda;
     }
 
-    public Produto getProdutos() {
-        return produtos;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setProdutos(Produto produtos) {
-        this.produtos = produtos;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
-    public Venda getVendas() {
-        return vendas;
+    public Venda getVenda() {
+        return venda;
     }
 
-    public void setVendas(Venda vendas) {
-        this.vendas = vendas;
+    public void setVenda(Venda venda) {
+        this.venda = venda;
     }
     
 }

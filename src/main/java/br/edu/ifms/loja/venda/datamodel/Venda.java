@@ -8,8 +8,6 @@ package br.edu.ifms.loja.venda.datamodel;
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import br.edu.ifms.loja.usuario.datamodel.Usuario;
 import java.util.Date;
-import java.util.List;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +19,7 @@ import javax.persistence.Temporal;
  *
  * @author djgiu
  */
-@Entity(name = "TB_VENDA")
+@Entity
 public class Venda {
     
     @Id
@@ -31,9 +29,9 @@ public class Venda {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataVenda;
     @ManyToOne
-    private Cliente clientes;
+    private Cliente cliente;
     @ManyToOne
-    private Usuario usuarios;
+    private Usuario usuario;
 
     public Integer getId() {
         return id;
@@ -59,20 +57,20 @@ public class Venda {
         this.dataVenda = dataVenda;
     }
 
-    public Cliente getClientes() {
-        return clientes;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setClientes(Cliente clientes) {
-        this.clientes = clientes;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Usuario getUsuarios() {
-        return usuarios;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarios(Usuario usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     
 }

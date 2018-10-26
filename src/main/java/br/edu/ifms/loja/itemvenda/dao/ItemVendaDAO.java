@@ -5,10 +5,22 @@
  */
 package br.edu.ifms.loja.itemvenda.dao;
 
+import br.edu.ifms.loja.app.dao.GenericDAO;
+import br.edu.ifms.loja.itemvenda.datamodel.ItemVenda;
+
 /**
  *
  * @author djgiu
  */
-public class ItemVendaDAO {
+public class ItemVendaDAO extends GenericDAO<ItemVenda> {
+
+    private GenericDAO daoGeneric;
+
+    public ItemVendaDAO() {
+        super(ItemVenda.class); //chama o construtor da classe pai
+    }
     
+    public void inserirItemVenda (ItemVenda itemVenda){
+        daoGeneric.inserir(itemVenda);
+    }
 }

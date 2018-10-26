@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifms.loja.uf.dao;
-
-import br.edu.ifms.loja.app.dao.GenericDAO;
-import br.edu.ifms.loja.uf.datamodel.Uf;
+package br.edu.ifms.loja.cliente.exception;
 
 /**
  *
  * @author djgiu
  */
-public class UfDAO extends GenericDAO<Uf> {  
-
-    public UfDAO() {
-        super(Uf.class);
+public class NomeInvalidoException {
+    
+    @Override
+    public String toString() {
+        return "Nome inválido!";
     }
-   
 }

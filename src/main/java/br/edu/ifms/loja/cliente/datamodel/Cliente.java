@@ -1,36 +1,46 @@
 package br.edu.ifms.loja.cliente.datamodel;
 
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
-import java.util.List;
+import com.towel.el.annotation.Resolvable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity(name = "TB_CLIENTE")
+@Entity
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Resolvable(colName = "id") //<@Resolvable>como aparece o campo em cima da tabela
+    private Long id;
+    @Resolvable(colName = "nome")
     private String nome;
+    @Resolvable(colName = "cpf")
     private String cpf;
+    @Resolvable(colName = "bairro")
     private String bairro;
+    @Resolvable(colName = "rua")
     private String rua;
+    @Resolvable(colName = "numero")
     private String numero;
+    @Resolvable(colName = "dataNascimento")
     private String dataNascimento;
+    @Resolvable(colName = "e-mail")
     private String email;
+    @Resolvable(colName = "telefone")
     private String telefone;
+    @Resolvable(colName = "cep")
     private String cep;
     @ManyToOne
     private Cidade cidade;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

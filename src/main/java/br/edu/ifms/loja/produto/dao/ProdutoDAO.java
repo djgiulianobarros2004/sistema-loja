@@ -5,10 +5,17 @@
  */
 package br.edu.ifms.loja.produto.dao;
 
+import br.edu.ifms.loja.app.dao.GenericDAO;
+import br.edu.ifms.loja.produto.datamodel.Produto;
+
 /**
  *
  * @author djgiu
  */
-public class ProdutoDAO {
-    
+public class ProdutoDAO extends GenericDAO<Produto> {   
+
+    public ProdutoDAO() {
+        super(Produto.class);
+    }    
+
 }

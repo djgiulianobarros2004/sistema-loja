@@ -5,17 +5,22 @@
  */
 package br.edu.ifms.loja.usuario.dao;
 
-import br.edu.ifms.loja.app.bd.GenericDAO;
+import br.edu.ifms.loja.app.dao.GenericDAO;
 import br.edu.ifms.loja.usuario.datamodel.Usuario;
 
 /**
  *
  * @author djgiu
  */
-public class UsuarioDAO extends GenericDAO <Usuario> {
-    
+public class UsuarioDAO extends GenericDAO<Usuario> {
+
+    private GenericDAO daoGeneric;
+
     public UsuarioDAO() {
-        super(Usuario.class);
+        super(Usuario.class); //chama o construtor da classe pai
     }
-    
+
+    public void inserirUsuario(Usuario usuario) {
+       daoGeneric.inserir(usuario);
+    }
 }

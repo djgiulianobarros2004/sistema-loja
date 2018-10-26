@@ -5,10 +5,22 @@
  */
 package br.edu.ifms.loja.venda.bo;
 
+import br.edu.ifms.loja.venda.dao.VendaDAO;
+import br.edu.ifms.loja.venda.datamodel.Venda;
+
 /**
  *
  * @author djgiu
  */
 public class VendaBO {
+
+    private VendaDAO daoVenda;
+
+    public VendaBO() {
+        daoVenda = new VendaDAO();
+    }
     
+    public void inserirVenda(Venda venda){
+        daoVenda.inserirVenda(venda);
+    }
 }

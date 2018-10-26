@@ -6,8 +6,6 @@
 package br.edu.ifms.loja.usuario.datamodel;
 
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
-import java.util.List;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +16,7 @@ import javax.persistence.ManyToOne;
  *
  * @author djgiu
  */
-@Entity(name = "TB_USUARIO")
+@Entity
 public class Usuario {
     
     @Id
@@ -34,8 +32,8 @@ public class Usuario {
     private String numero;
     private String cep;
     @ManyToOne
-    private Cidade cidades;
-
+    private Cidade cidade;
+    
     public Integer getId() {
         return id;
     }
@@ -116,12 +114,12 @@ public class Usuario {
         this.cep = cep;
     }
 
-    public Cidade getCidades() {
-        return cidades;
+    public Cidade getCidade() {
+        return cidade;
     }
 
-    public void setCidades(Cidade cidades) {
-        this.cidades = cidades;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
    
 }

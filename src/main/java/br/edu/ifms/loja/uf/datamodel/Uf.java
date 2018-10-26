@@ -5,8 +5,8 @@
  */
 package br.edu.ifms.loja.uf.datamodel;
 
+import com.towel.el.annotation.Resolvable;
 import java.math.BigDecimal;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,14 +16,18 @@ import javax.persistence.Id;
  *
  * @author djgiu
  */
-@Entity(name = "TABELA_UF")
+@Entity
 public class Uf {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Resolvable(colName = "id")
     private Integer id;
+    @Resolvable(colName = "nome")
     private String nome;
+    @Resolvable(colName = "sigla")
     private String sigla;
+    @Resolvable(colName = "icms")
     private BigDecimal icms;
 
     public Integer getId() {

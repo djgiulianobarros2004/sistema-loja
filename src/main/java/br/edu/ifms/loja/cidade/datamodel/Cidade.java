@@ -6,7 +6,6 @@
 package br.edu.ifms.loja.cidade.datamodel;
 
 import br.edu.ifms.loja.uf.datamodel.Uf;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,7 @@ import javax.persistence.ManyToOne;
  *
  * @author djgiu
  */
-@Entity(name = "TB_CIDADE")
+@Entity
 public class Cidade {
     
     @Id
@@ -50,7 +49,5 @@ public class Cidade {
     public void setUf(Uf uf) {
         this.uf = uf;
     }
-
-
     
 }

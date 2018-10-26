@@ -5,10 +5,21 @@
  */
 package br.edu.ifms.loja.produto.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
+import br.edu.ifms.loja.produto.dao.ProdutoDAO;
+import br.edu.ifms.loja.produto.datamodel.Produto;
+
 /**
  *
  * @author djgiu
  */
-public class ProdutoBO {
-    
+public class ProdutoBO extends GenericBO<Produto> {
+
+    private ProdutoDAO daoProduto;
+
+    public ProdutoBO() {
+        super(Produto.class);
+        daoProduto = new ProdutoDAO();
+    }
+
 }

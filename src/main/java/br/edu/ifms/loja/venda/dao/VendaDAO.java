@@ -5,10 +5,22 @@
  */
 package br.edu.ifms.loja.venda.dao;
 
+import br.edu.ifms.loja.app.dao.GenericDAO;
+import br.edu.ifms.loja.venda.datamodel.Venda;
+
 /**
  *
  * @author djgiu
  */
-public class VendaDAO {
-    
+public class VendaDAO extends GenericDAO<Venda> {
+
+    private GenericDAO daoGeneric;
+
+    public VendaDAO() {
+        super(Venda.class);
+    }
+
+    public void inserirVenda(Venda venda) {
+        daoGeneric.inserir(venda);
+    }
 }

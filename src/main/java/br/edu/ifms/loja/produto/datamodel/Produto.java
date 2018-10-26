@@ -5,11 +5,9 @@
  */
 package br.edu.ifms.loja.produto.datamodel;
 
-import br.edu.ifms.loja.itemvenda.datamodel.ItemVenda;
 import br.edu.ifms.loja.fornecedor.datamodel.Fornecedor;
+import com.towel.el.annotation.Resolvable;
 import java.math.BigDecimal;
-import java.util.List;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,18 +18,25 @@ import javax.persistence.ManyToOne;
  *
  * @author djgiu
  */
-@Entity(name = "TB_PRODUTO")
+@Entity
 public class Produto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Resolvable(colName = "id")
     private Long id;
-    private BigDecimal valorVenda;
-    private Integer qtdeVenda;
+    @Resolvable(colName = "descricao")
+    private String descricao;
+    @Resolvable(colName = "marca")
+    private String marca;
+    @Resolvable(colName = "modelo")
+    private String modelo;
+    @Resolvable(colName = "valor")
+    private BigDecimal valor;
+    @Resolvable(colName = "qtde")
+    private Integer qtde;
     @ManyToOne
-    private Fornecedor fornecedores;
-    @ManyToOne
-    private ItemVenda itensVendas;
+    private Fornecedor fornecedor;
 
     public Long getId() {
         return id;
@@ -41,36 +46,52 @@ public class Produto {
         this.id = id;
     }
 
-    public BigDecimal getValorVenda() {
-        return valorVenda;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setValorVenda(BigDecimal valorVenda) {
-        this.valorVenda = valorVenda;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Integer getQtdeVenda() {
-        return qtdeVenda;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setQtdeVenda(Integer qtdeVenda) {
-        this.qtdeVenda = qtdeVenda;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public Fornecedor getFornecedores() {
-        return fornecedores;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setFornecedores(Fornecedor fornecedores) {
-        this.fornecedores = fornecedores;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    public ItemVenda getItensVendas() {
-        return itensVendas;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setItensVendas(ItemVenda itensVendas) {
-        this.itensVendas = itensVendas;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
+
+    public Integer getQtde() {
+        return qtde;
+    }
+
+    public void setQtde(Integer qtde) {
+        this.qtde = qtde;
+    }
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }    
             
 }

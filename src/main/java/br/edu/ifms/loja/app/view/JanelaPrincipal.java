@@ -5,6 +5,7 @@
  */
 package br.edu.ifms.loja.app.view;
 
+import br.edu.ifms.loja.cliente.view.JanelaInternaCadastros;
 import br.ifms.edu.lpii.app.utils.ImagemUtils;
 import com.towel.swing.img.JImagePanel;
 import java.io.IOException;

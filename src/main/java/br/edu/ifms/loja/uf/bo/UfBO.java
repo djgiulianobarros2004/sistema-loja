@@ -5,10 +5,22 @@
  */
 package br.edu.ifms.loja.uf.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
+import br.edu.ifms.loja.uf.dao.UfDAO;
+import br.edu.ifms.loja.uf.datamodel.Uf;
+import java.sql.SQLException;
+
 /**
  *
  * @author djgiu
  */
-public class UfBO {
-    
+public class UfBO extends GenericBO<Uf> {
+
+    private UfDAO daoUf;
+
+    public UfBO() throws SQLException {
+        super(Uf.class);
+        daoUf = new UfDAO();
+    }
+
 }

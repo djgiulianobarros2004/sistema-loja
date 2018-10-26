@@ -5,9 +5,8 @@
  */
 package br.edu.ifms.loja.fornecedor.datamodel;
 
-import br.edu.ifms.loja.produto.datamodel.Produto;
-import java.util.List;
-import javax.annotation.Generated;
+import br.edu.ifms.loja.cidade.datamodel.Cidade;
+import com.towel.el.annotation.Resolvable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,29 +17,39 @@ import javax.persistence.ManyToOne;
  *
  * @author djgiu
  */
-@Entity(name = "TB_FORNECEDOR")
+@Entity
 public class Fornecedor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Resolvable(colName = "id")
+    private Long id;
+    @Resolvable(colName = "nomeFantasia")
     private String nomeFantasia;
+    @Resolvable(colName = "razaoSocial")
     private String razaoSocial;
+    @Resolvable(colName = "cnpj")
     private String cnpj;
+    @Resolvable(colName = "telefone")
     private String telefone;
+    @Resolvable(colName = "e-mail")
     private String email;
+    @Resolvable(colName = "cep")
     private String cep;
+    @Resolvable(colName = "bairro")
     private String bairro;
+    @Resolvable(colName = "rua")
     private String rua;
+    @Resolvable(colName = "numero")
     private String numero;
     @ManyToOne
-    private Produto produtos;
+    private Cidade cidade;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -116,12 +125,12 @@ public class Fornecedor {
         this.numero = numero;
     }
 
-    public Produto getProdutos() {
-        return produtos;
+    public Cidade getCidade() {
+        return cidade;
     }
 
-    public void setProdutos(Produto produtos) {
-        this.produtos = produtos;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
      
 }
