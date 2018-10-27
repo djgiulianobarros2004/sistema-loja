@@ -14,14 +14,10 @@ import java.sql.SQLException;
  * @author djgiu
  */
 public class CidadeDAO extends GenericDAO<Cidade> {
-
-    CidadeDAO daoCidade;
+   
 
     public CidadeDAO() throws SQLException {
         super(Cidade.class); //chama o construtor da classe pai
     }
 
-    public void inserirCidade(Cidade cidade) {
-       daoCidade.inserir(cidade);
-    }
 }

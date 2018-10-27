@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifms.loja.cliente.view;
+package br.edu.ifms.loja.app.view;
 
+import br.edu.ifms.loja.cidade.view.CidadeCRUD;
+import br.edu.ifms.loja.cliente.view.ClienteCRUD;
 import br.edu.ifms.loja.fornecedor.view.FornecedorCRUD;
 import br.edu.ifms.loja.produto.view.ProdutoCRUD;
 import br.edu.ifms.loja.uf.view.UfCRUD;
@@ -146,7 +148,8 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoProdutosActionPerformed
 
     private void botaoCidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCidadesActionPerformed
-        // TODO add your handling code here:
+        CidadeCRUD cadastroCidade = new CidadeCRUD(null, true);
+        cadastroCidade.setVisible(true);
     }//GEN-LAST:event_botaoCidadesActionPerformed
 
     private void botaoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClientesActionPerformed

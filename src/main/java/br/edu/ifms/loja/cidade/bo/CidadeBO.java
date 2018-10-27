@@ -5,24 +5,23 @@
  */
 package br.edu.ifms.loja.cidade.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.cidade.dao.CidadeDAO;
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
+import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import java.sql.SQLException;
 
 /**
  *
  * @author djgiu
  */
-public class CidadeBO {
+public class CidadeBO extends GenericBO<Cidade> {
 
     private CidadeDAO daoCidade;
 
     public CidadeBO() throws SQLException {
+        super(Cliente.class);
         daoCidade = new CidadeDAO();
-    }
-    
-    public void inserirCidade(Cidade cidade){
-        daoCidade.inserirCidade(cidade);
-    }
+    }   
 
 }
