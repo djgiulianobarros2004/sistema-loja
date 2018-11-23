@@ -7,7 +7,6 @@ package br.edu.ifms.loja.cidade.dao;
 
 import br.edu.ifms.loja.app.dao.GenericDAO;
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
-import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -32,6 +31,15 @@ public class CidadeDAO extends GenericDAO<Cidade> {
 
         return em.createQuery(sb.toString())
                 .setParameter("idUf", idUf)
+                .getResultList();
+    }
+
+    public List<Cidade> listarTodasasCidades() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT c ");
+        sb.append("FROM Cidade c ");
+
+        return em.createQuery(sb.toString())
                 .getResultList();
     }
 

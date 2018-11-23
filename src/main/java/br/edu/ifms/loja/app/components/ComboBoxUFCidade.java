@@ -10,6 +10,7 @@ import br.edu.ifms.loja.cidade.datamodel.Cidade;
 import br.edu.ifms.loja.uf.bo.UfBO;
 import br.edu.ifms.loja.uf.datamodel.Uf;
 import com.towel.combo.swing.ObjectComboBoxModel;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class ComboBoxUFCidade extends javax.swing.JPanel {
     private ObjectComboBoxModel<Uf> ufModel;
     private ObjectComboBoxModel<Cidade> cidadeModel;
 
-    public ComboBoxUFCidade() {
+    public ComboBoxUFCidade() throws SQLException {
         initComponents();
         ufBO = new UfBO();
         cidadeBO = new CidadeBO();

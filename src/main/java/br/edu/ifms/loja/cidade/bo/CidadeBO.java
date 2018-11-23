@@ -22,10 +22,14 @@ public class CidadeBO extends GenericBO<Cidade> {
     public CidadeBO() {
         super(Cliente.class);
         daoCidade = new CidadeDAO();
-    } 
-    
-     public List<Cidade> listarCidadesPorIdUF(Long idUF){
+    }
+
+    public List<Cidade> listarCidadesPorIdUF(Long idUF) {
         return daoCidade.listarCidadesPorIdUF(idUF);
+    }
+
+    public List<Cidade> listarTodasasCidades() {
+        return daoCidade.listarTodasasCidades();
     }
 
 }

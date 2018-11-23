@@ -5,7 +5,7 @@ import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import java.util.List;
 import javax.persistence.EntityManager;
 
-public class ClienteDAO extends GenericDAO<Cliente> {  
+public class ClienteDAO extends GenericDAO<Cliente> {
 
     public ClienteDAO() {
         super(Cliente.class);//chama o construtor da classe pai
@@ -47,8 +47,8 @@ public class ClienteDAO extends GenericDAO<Cliente> {
         consulta.append("OR c.nome LIKE :nome ");
 
         return em.createQuery(consulta.toString())
-                .setParameter("cpf", cpf+"%")
-                .setParameter("nome", nome+"%")
+                .setParameter("cpf", cpf + "%")
+                .setParameter("nome", nome + "%")
                 .getResultList();
     }
 }
