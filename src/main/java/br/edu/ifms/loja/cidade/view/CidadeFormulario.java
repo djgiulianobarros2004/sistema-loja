@@ -5,7 +5,10 @@
  */
 package br.edu.ifms.loja.cidade.view;
 
-import javax.swing.JLabel;
+import br.edu.ifms.loja.uf.datamodel.Uf;
+import com.towel.combo.swing.ObjectComboBoxModel;
+import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
@@ -14,11 +17,29 @@ import javax.swing.JTextField;
  */
 public class CidadeFormulario extends javax.swing.JPanel {
 
+    private ObjectComboBoxModel<Uf> model;
+
     /**
      * Creates new form CidadeFormulario
      */
     public CidadeFormulario() {
         initComponents();
+        model = new ObjectComboBoxModel<Uf>();
+        ComboBoxUF.setModel(model);
+    }
+
+    public void carregarComboBoxUF(List<Uf> ufs) {
+        model.setData(ufs);
+    }
+
+    public Uf getUFSelecionada() {
+        return model.getSelectedObject();
+    }
+
+    public void setUFSelectionada(Uf uf) {
+        model.setSelectedObject(uf);
+        ComboBoxUF.setModel(model);
+        ComboBoxUF.updateUI();
     }
 
     /**
@@ -33,9 +54,9 @@ public class CidadeFormulario extends javax.swing.JPanel {
         labelNome = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
         labelUF = new javax.swing.JLabel();
-        campoUF = new javax.swing.JTextField();
+        ComboBoxUF = new javax.swing.JComboBox<>();
 
-        labelNome.setText("Nome");
+        labelNome.setText("Nome:");
 
         campoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,13 +64,9 @@ public class CidadeFormulario extends javax.swing.JPanel {
             }
         });
 
-        labelUF.setText("UF");
+        labelUF.setText("UF:");
 
-        campoUF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUFActionPerformed(evt);
-            }
-        });
+        ComboBoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -58,14 +75,12 @@ public class CidadeFormulario extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelUF)
-                        .addGap(30, 30, 30)
-                        .addComponent(campoUF)))
+                    .addComponent(labelNome)
+                    .addComponent(labelUF))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                    .addComponent(ComboBoxUF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -77,8 +92,8 @@ public class CidadeFormulario extends javax.swing.JPanel {
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelUF))
+                    .addComponent(labelUF)
+                    .addComponent(ComboBoxUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -87,17 +102,21 @@ public class CidadeFormulario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
-    private void campoUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUFActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboBoxUF;
     private javax.swing.JTextField campoNome;
-    private javax.swing.JTextField campoUF;
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelUF;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getComboBoxUF() {
+        return ComboBoxUF;
+    }
+
+    public void setComboBoxUF(JComboBox<String> ComboBoxUF) {
+        this.ComboBoxUF = ComboBoxUF;
+    }
 
     public JTextField getCampoNome() {
         return campoNome;
@@ -107,29 +126,4 @@ public class CidadeFormulario extends javax.swing.JPanel {
         this.campoNome = campoNome;
     }
 
-    public JTextField getCampoUF() {
-        return campoUF;
-    }
-
-    public void setCampoUF(JTextField campoUF) {
-        this.campoUF = campoUF;
-    }
-
-    public JLabel getLabelNome() {
-        return labelNome;
-    }
-
-    public void setLabelNome(JLabel labelNome) {
-        this.labelNome = labelNome;
-    }
-
-    public JLabel getLabelUF() {
-        return labelUF;
-    }
-
-    public void setLabelUF(JLabel labelUF) {
-        this.labelUF = labelUF;
-    }
-    
 }
-

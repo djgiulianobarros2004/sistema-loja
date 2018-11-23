@@ -6,6 +6,7 @@
 package br.edu.ifms.loja.cidade.datamodel;
 
 import br.edu.ifms.loja.uf.datamodel.Uf;
+import com.towel.el.annotation.Resolvable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +19,14 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Cidade {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Resolvable(colName = "id")
     private Long id;
+    @Resolvable(colName = "nome")
     private String nome;
+    @Resolvable(colName = "uf")
     @ManyToOne
     private Uf uf;
 
@@ -49,5 +53,10 @@ public class Cidade {
     public void setUf(Uf uf) {
         this.uf = uf;
     }
-    
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
 }

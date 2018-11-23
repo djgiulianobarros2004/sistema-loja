@@ -42,6 +42,7 @@ public class Fornecedor {
     private String rua;
     @Resolvable(colName = "numero")
     private String numero;
+    @Resolvable(colName = "cidade")
     @ManyToOne
     private Cidade cidade;
 

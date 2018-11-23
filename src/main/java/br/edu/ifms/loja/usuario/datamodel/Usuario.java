@@ -6,6 +6,7 @@
 package br.edu.ifms.loja.usuario.datamodel;
 
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
+import com.towel.el.annotation.Resolvable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,24 +22,35 @@ public class Usuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Resolvable(colName = "id")
+    private Long id;
+    @Resolvable(colName = "nome")
     private String nome;
+    @Resolvable(colName = "cpf")
     private String cpf;
+    @Resolvable(colName = "email")
     private String email;
+    @Resolvable(colName = "senha")
     private String senha;
+    @Resolvable(colName = "papel")
     private String papel;
+    @Resolvable(colName = "bairro")
     private String bairro;
+    @Resolvable(colName = "rua")
     private String rua;
+    @Resolvable(colName = "numero")
     private String numero;
+    @Resolvable(colName = "cep")
     private String cep;
+    @Resolvable(colName = "cidade")
     @ManyToOne
     private Cidade cidade;
-    
-    public Integer getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

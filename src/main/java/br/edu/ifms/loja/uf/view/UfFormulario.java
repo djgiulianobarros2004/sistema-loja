@@ -5,7 +5,6 @@
  */
 package br.edu.ifms.loja.uf.view;
 
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -126,31 +125,7 @@ public class UfFormulario extends javax.swing.JPanel {
     public void setCampoUf(JTextField campoUf) {
         this.campoUfNome = campoUf;
     } 
-
-    public JLabel getLabelICMS() {
-        return labelICMS;
-    }
-
-    public void setLabelICMS(JLabel labelICMS) {
-        this.labelICMS = labelICMS;
-    }
-
-    public JLabel getLabelSigla() {
-        return labelSigla;
-    }
-
-    public void setLabelSigla(JLabel labelSigla) {
-        this.labelSigla = labelSigla;
-    }
-
-    public JLabel getLabelUf() {
-        return labelUfNome;
-    }
-
-    public void setLabelUf(JLabel labelUf) {
-        this.labelUfNome = labelUf;
-    }
-    
+       
 }
 
 

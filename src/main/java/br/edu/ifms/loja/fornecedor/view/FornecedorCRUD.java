@@ -23,11 +23,11 @@ public class FornecedorCRUD extends GenericCRUD<Fornecedor> {
 
     private Fornecedor fornencedor;
     private FornecedorBO fornecedorBO;
-    private FornecedorFormulario formularioFornecedor2;
+    private FornecedorFormulario formularioFornecedor;
 
     public FornecedorCRUD(Frame parent, boolean modal) {
         super(parent, modal, Fornecedor.class, new String[]{"id", "nomeFantasia", "cnpj",
-            "razaoSocial", "telefone", "email", "cep", "bairro", "rua", "numero"});
+            "razaoSocial", "telefone", "email", "cep", "bairro", "rua", "numero", "cidade.uf.sigla:UF"});
 
         try {
             fornecedorBO = new FornecedorBO();
@@ -39,39 +39,41 @@ public class FornecedorCRUD extends GenericCRUD<Fornecedor> {
 
     @Override
     public void setSize(int width, int height) {
-        super.setSize(900, 800);
+        super.setSize(800, 600);
     }
 
     @Override
     protected JPanel criarFormulario() {
-        formularioFornecedor2 = new FornecedorFormulario();
-        return formularioFornecedor2;
+        formularioFornecedor = new FornecedorFormulario();
+        return formularioFornecedor;
     }
 
     @Override
     protected void camposParaObjeto() {
-        fornencedor.setNomeFantasia(formularioFornecedor2.getCampoNomeFantasia().getText());
-        fornencedor.setCnpj(formularioFornecedor2.getCampoCNPJ().getText());
-        fornencedor.setRazaoSocial(formularioFornecedor2.getCampoRazaoSocial().getText());
-        fornencedor.setTelefone(formularioFornecedor2.getCampoTelefone().getText());
-        fornencedor.setEmail(formularioFornecedor2.getCampoEmail().getText());
-        fornencedor.setCep(formularioFornecedor2.getCampoCEP().getText());
-        fornencedor.setBairro(formularioFornecedor2.getCampoBairro().getText());
-        fornencedor.setRua(formularioFornecedor2.getCampoRua().getText());
-        fornencedor.setNumero(formularioFornecedor2.getCampoNumero().getText());
+        fornencedor.setNomeFantasia(formularioFornecedor.getCampoNomeFantasia().getText());
+        fornencedor.setCnpj(formularioFornecedor.getCampoCNPJ().getText());
+        fornencedor.setRazaoSocial(formularioFornecedor.getCampoRazaoSocial().getText());
+        fornencedor.setTelefone(formularioFornecedor.getCampoTelefone().getText());
+        fornencedor.setEmail(formularioFornecedor.getCampoEmail().getText());
+        fornencedor.setCep(formularioFornecedor.getCampoCEP().getText());
+        fornencedor.setBairro(formularioFornecedor.getCampoBairro().getText());
+        fornencedor.setRua(formularioFornecedor.getCampoRua().getText());
+        fornencedor.setNumero(formularioFornecedor.getCampoNumero().getText());
+        fornencedor.setCidade(formularioFornecedor.getComboboxUFCidade().getSelectedCidade());
     }
 
     @Override
     protected void objetoParaCampos() {
-        formularioFornecedor2.getCampoNomeFantasia().setText(fornencedor.getNomeFantasia());
-        formularioFornecedor2.getCampoCNPJ().setText(fornencedor.getCnpj());
-        formularioFornecedor2.getCampoRazaoSocial().setText(fornencedor.getRazaoSocial());
-        formularioFornecedor2.getCampoTelefone().setText(fornencedor.getTelefone());
-        formularioFornecedor2.getCampoEmail().setText(fornencedor.getEmail());
-        formularioFornecedor2.getCampoCEP().setText(fornencedor.getCep());
-        formularioFornecedor2.getCampoBairro().setText(fornencedor.getBairro());
-        formularioFornecedor2.getCampoRua().setText(fornencedor.getRua());
-        formularioFornecedor2.getCampoNumero().setText(fornencedor.getNumero());
+        formularioFornecedor.getCampoNomeFantasia().setText(fornencedor.getNomeFantasia());
+        formularioFornecedor.getCampoCNPJ().setText(fornencedor.getCnpj());
+        formularioFornecedor.getCampoRazaoSocial().setText(fornencedor.getRazaoSocial());
+        formularioFornecedor.getCampoTelefone().setText(fornencedor.getTelefone());
+        formularioFornecedor.getCampoEmail().setText(fornencedor.getEmail());
+        formularioFornecedor.getCampoCEP().setText(fornencedor.getCep());
+        formularioFornecedor.getCampoBairro().setText(fornencedor.getBairro());
+        formularioFornecedor.getCampoRua().setText(fornencedor.getRua());
+        formularioFornecedor.getCampoNumero().setText(fornencedor.getNumero());
+        formularioFornecedor.getComboboxUFCidade().setSelectedCidade(fornencedor.getCidade());
     }
 
     @Override

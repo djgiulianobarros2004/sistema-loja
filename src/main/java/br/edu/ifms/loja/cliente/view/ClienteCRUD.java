@@ -3,6 +3,7 @@ package br.edu.ifms.loja.cliente.view;
 import br.edu.ifms.loja.app.layouts.GenericCRUD;
 import br.edu.ifms.loja.cliente.bo.ClienteBO;
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
+import br.edu.ifms.loja.cliente.datamodel.Cliente_;
 import java.awt.Frame;
 import java.sql.SQLException;
 import java.util.List;
@@ -17,7 +18,7 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
     private ClienteFormulario formularioCliente;
 
     public ClienteCRUD(Frame parent, boolean modal) {
-        super(parent, modal, Cliente.class, new String[]{"id", "nome", "email"});
+        super(parent, modal, Cliente.class, new String[]{"id", "nome", "email", "cidade","cidade.uf.sigla:UF"});
 
         try {
             clienteBO = new ClienteBO();
@@ -48,6 +49,7 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
         cliente.setTelefone(formularioCliente.getCampoTelefone().getText());
         cliente.setRua(formularioCliente.getCampoRua().getText());
         cliente.setNumero(formularioCliente.getCampoNumero().getText());
+        cliente.setCidade(formularioCliente.getComboBoxUFCidade().getSelectedCidade());
     }
 
     @Override
@@ -58,6 +60,7 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
         formularioCliente.getCampoTelefone().setText(cliente.getTelefone());
         formularioCliente.getCampoRua().setText(cliente.getRua());
         formularioCliente.getCampoNumero().setText(cliente.getNumero());
+        formularioCliente.getComboBoxUFCidade().setSelectedCidade(cliente.getCidade());        
     }
 
     @Override

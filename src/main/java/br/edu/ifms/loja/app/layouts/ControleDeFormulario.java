@@ -41,6 +41,10 @@ public class ControleDeFormulario {
             JTree.class
     );
 
+    public void trimmer() {
+
+    }
+
     /**
      * Percorre um JPanel que represente um formulário e habilita a edição dos
      * campos.

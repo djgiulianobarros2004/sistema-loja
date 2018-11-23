@@ -10,10 +10,7 @@ import br.edu.ifms.loja.uf.bo.UfBO;
 import br.edu.ifms.loja.uf.datamodel.Uf;
 import java.awt.Frame;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -28,14 +25,8 @@ public class UfCRUD extends GenericCRUD<Uf> {
 
     public UfCRUD(Frame parent, boolean modal) {
         super(parent, modal, Uf.class, new String[]{"id", "nome", "sigla", "icms"});
-
-        try {
-            ufBO = new UfBO();
-            carregarTabela();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(UfCRUD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ufBO = new UfBO();
+        carregarTabela();
     }
 
     @Override
@@ -46,7 +37,6 @@ public class UfCRUD extends GenericCRUD<Uf> {
     @Override
     protected JPanel criarFormulario() {
         formularioUf = new UfFormulario();
-        formularioUf.setVisible(true);
         return formularioUf;
     }
 
@@ -63,9 +53,9 @@ public class UfCRUD extends GenericCRUD<Uf> {
         formularioUf.getCampoSigla().setText(uf.getSigla());
         if (uf.getIcms() != null) {
             formularioUf.getCampoICMS().setText(uf.getIcms().toString());
-        }else{
+        } else {
             formularioUf.getCampoICMS().setText("");
-        }         
+        }
     }
 
     @Override
@@ -105,7 +95,7 @@ public class UfCRUD extends GenericCRUD<Uf> {
 
     @Override
     protected void obterItemSelecionadoNaTabela(Uf itemSelecionado) {
-        this.uf = itemSelecionado;
+        uf = itemSelecionado;
     }
 
 }

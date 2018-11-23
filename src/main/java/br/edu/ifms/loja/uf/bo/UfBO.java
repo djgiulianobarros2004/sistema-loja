@@ -6,9 +6,7 @@
 package br.edu.ifms.loja.uf.bo;
 
 import br.edu.ifms.loja.app.bo.GenericBO;
-import br.edu.ifms.loja.uf.dao.UfDAO;
 import br.edu.ifms.loja.uf.datamodel.Uf;
-import java.sql.SQLException;
 
 /**
  *
@@ -16,11 +14,8 @@ import java.sql.SQLException;
  */
 public class UfBO extends GenericBO<Uf> {
 
-    private UfDAO daoUf;
-
-    public UfBO() throws SQLException {
+    public UfBO() {
         super(Uf.class);
-        daoUf = new UfDAO();
     }
 
 }

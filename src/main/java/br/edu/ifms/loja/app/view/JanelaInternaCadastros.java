@@ -10,6 +10,7 @@ import br.edu.ifms.loja.cliente.view.ClienteCRUD;
 import br.edu.ifms.loja.fornecedor.view.FornecedorCRUD;
 import br.edu.ifms.loja.produto.view.ProdutoCRUD;
 import br.edu.ifms.loja.uf.view.UfCRUD;
+import br.edu.ifms.loja.usuario.view.UsuarioCRUD;
 import javax.swing.JInternalFrame;
 
 /**
@@ -158,7 +159,8 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botaoClientesActionPerformed
 
     private void botaoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUsuariosActionPerformed
-        // TODO add your handling code here:
+        UsuarioCRUD cadastroUsuario = new UsuarioCRUD(null, true);
+        cadastroUsuario.setVisible(true);
     }//GEN-LAST:event_botaoUsuariosActionPerformed
 
 

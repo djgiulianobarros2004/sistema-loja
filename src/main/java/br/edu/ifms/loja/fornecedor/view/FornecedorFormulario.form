@@ -19,27 +19,42 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelRazaoSocial" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelNomeFantasia" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelCNPJ" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelCEP" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelBairro" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRua" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelNumero" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="campoCNPJ" max="32767" attributes="0"/>
-                  <Component id="campoNomeFantasia" pref="293" max="32767" attributes="0"/>
-                  <Component id="campoRazaoSocial" alignment="1" max="32767" attributes="0"/>
-                  <Component id="campoTelefone" max="32767" attributes="0"/>
-                  <Component id="campoEmail" max="32767" attributes="0"/>
-                  <Component id="campoCEP" max="32767" attributes="0"/>
-                  <Component id="campoBairro" max="32767" attributes="0"/>
-                  <Component id="campoRua" max="32767" attributes="0"/>
-                  <Component id="campoNumero" max="32767" attributes="0"/>
+                  <Component id="painelComboBox" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelRazaoSocial" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNomeFantasia" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCNPJ" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelRua" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNumero" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="campoEmail" max="32767" attributes="0"/>
+                          <Component id="campoNomeFantasia" max="32767" attributes="0"/>
+                          <Component id="campoRazaoSocial" alignment="1" max="32767" attributes="0"/>
+                          <Component id="campoRua" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="campoCNPJ" min="-2" pref="155" max="-2" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                              <Component id="labelTelefone" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoTelefone" min="-2" pref="159" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="campoNumero" min="-2" pref="43" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelBairro" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoBairro" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelCEP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoCEP" min="-2" pref="113" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -59,41 +74,38 @@
                   <Component id="campoRazaoSocial" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="campoCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="labelTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoCEP" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelCEP" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="campoRua" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelRua" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoBairro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="painelComboBox" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,52 +127,67 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelRazaoSocial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Raz&#xe3;o Social"/>
+        <Property name="text" type="java.lang.String" value="Raz&#xe3;o Social:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoRazaoSocial">
     </Component>
     <Component class="javax.swing.JLabel" name="labelTelefone">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Telefone"/>
+        <Property name="text" type="java.lang.String" value="Telefone:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoTelefone">
     </Component>
     <Component class="javax.swing.JLabel" name="labelEmail">
       <Properties>
-        <Property name="text" type="java.lang.String" value="e-mail"/>
+        <Property name="text" type="java.lang.String" value="e-mail:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoEmail">
     </Component>
     <Component class="javax.swing.JLabel" name="labelCEP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cep"/>
+        <Property name="text" type="java.lang.String" value="Cep:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoCEP">
     </Component>
     <Component class="javax.swing.JLabel" name="labelBairro">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bairro"/>
+        <Property name="text" type="java.lang.String" value="Bairro:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoBairro">
     </Component>
     <Component class="javax.swing.JLabel" name="labelRua">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Rua"/>
+        <Property name="text" type="java.lang.String" value="Rua:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoRua">
     </Component>
     <Component class="javax.swing.JLabel" name="labelNumero">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero"/>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoNumero">
     </Component>
+    <Container class="javax.swing.JPanel" name="painelComboBox">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="87" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </SubComponents>
 </Form>

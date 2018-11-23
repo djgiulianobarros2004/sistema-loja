@@ -22,7 +22,7 @@ public class Uf {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Resolvable(colName = "id")
-    private Integer id;
+    private Long id;
     @Resolvable(colName = "nome")
     private String nome;
     @Resolvable(colName = "sigla")
@@ -30,11 +30,11 @@ public class Uf {
     @Resolvable(colName = "icms")
     private BigDecimal icms;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -61,5 +61,10 @@ public class Uf {
     public void setIcms(BigDecimal icms) {
         this.icms = icms;
     }
-    
+
+    @Override
+    public String toString() {
+        return nome + " (" + sigla + ")";
+    }
+
 }

@@ -9,7 +9,7 @@ import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.cidade.dao.CidadeDAO;
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
-import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -19,9 +19,13 @@ public class CidadeBO extends GenericBO<Cidade> {
 
     private CidadeDAO daoCidade;
 
-    public CidadeBO() throws SQLException {
+    public CidadeBO() {
         super(Cliente.class);
         daoCidade = new CidadeDAO();
-    }   
+    } 
+    
+     public List<Cidade> listarCidadesPorIdUF(Long idUF){
+        return daoCidade.listarCidadesPorIdUF(idUF);
+    }
 
 }

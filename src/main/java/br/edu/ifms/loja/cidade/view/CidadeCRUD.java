@@ -8,11 +8,10 @@ package br.edu.ifms.loja.cidade.view;
 import br.edu.ifms.loja.app.layouts.GenericCRUD;
 import br.edu.ifms.loja.cidade.bo.CidadeBO;
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
+import br.edu.ifms.loja.uf.bo.UfBO;
+import br.edu.ifms.loja.uf.datamodel.Uf;
 import java.awt.Frame;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -23,18 +22,15 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
 
     private Cidade cidade;
     private CidadeBO cidadeBO;
+    private UfBO ufBO;
     private CidadeFormulario formularioCidade;
 
-    public CidadeCRUD(Frame parent, Boolean modal) {
-        super(parent, modal, Cidade.class, new String[]{"id", "nome", "uf"});
-
-        try {
-            cidadeBO = new CidadeBO();
-            carregarTabela();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(CidadeCRUD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public CidadeCRUD(Frame parent, boolean modal) {
+        super(parent, modal, Cidade.class, new String[]{"id", "nome", "uf.nome"});
+        cidadeBO = new CidadeBO();
+        ufBO = new UfBO();
+        carregarTabela();
+        carregarComboBoxUF();
     }
 
     @Override
@@ -42,21 +38,27 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
         super.setSize(800, 600);
     }
 
+    private void carregarComboBoxUF() {
+        List<Uf> ufs = ufBO.listarTodos();
+        formularioCidade.carregarComboBoxUF(ufs);
+    }
+
     @Override
     protected JPanel criarFormulario() {
         formularioCidade = new CidadeFormulario();
-        formularioCidade.setVisible(true);
         return formularioCidade;
     }
 
     @Override
     protected void camposParaObjeto() {
         cidade.setNome(formularioCidade.getCampoNome().getText());
+        cidade.setUf(formularioCidade.getUFSelecionada());
     }
 
     @Override
     protected void objetoParaCampos() {
         formularioCidade.getCampoNome().setText(cidade.getNome());
+        formularioCidade.setUFSelectionada(cidade.getUf());
     }
 
     @Override
@@ -81,7 +83,7 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
 
     @Override
     protected void excluir() {
-        cidadeBO.remover(cidade.getId());
+        cidadeBO.remover(cidade);
     }
 
     @Override
@@ -91,12 +93,13 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
 
     @Override
     protected List<Cidade> carregarListaParaTabela() {
+        carregarComboBoxUF();
         return cidadeBO.listarTodos();
     }
 
     @Override
     protected void obterItemSelecionadoNaTabela(Cidade itemSelecionado) {
-        this.cidade = itemSelecionado;
+        cidade = itemSelecionado;
     }
 
 }

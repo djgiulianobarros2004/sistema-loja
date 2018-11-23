@@ -5,6 +5,7 @@
  */
 package br.edu.ifms.loja.usuario.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.usuario.dao.UsuarioDAO;
 import br.edu.ifms.loja.usuario.datamodel.Usuario;
 import java.sql.SQLException;
@@ -13,15 +14,12 @@ import java.sql.SQLException;
  *
  * @author djgiu
  */
-public class UsuarioBO {
+public class UsuarioBO extends GenericBO<Usuario>{
 
     private UsuarioDAO daoUsuario;
 
     public UsuarioBO() throws SQLException {
+        super(Usuario.class);
         daoUsuario = new UsuarioDAO();
-    }
-    
-    public void inserirUsuario(Usuario usuario){
-        daoUsuario.inserirUsuario(usuario);
-    }
+    }     
 }

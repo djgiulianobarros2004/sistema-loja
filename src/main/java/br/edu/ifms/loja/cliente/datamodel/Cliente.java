@@ -32,8 +32,9 @@ public class Cliente {
     @Resolvable(colName = "telefone")
     private String telefone;
     @Resolvable(colName = "cep")
-    private String cep;
+    private String cep;    
     @ManyToOne
+    @Resolvable(colName = "cidade")
     private Cidade cidade;
 
     public Long getId() {
