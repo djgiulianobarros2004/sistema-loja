@@ -18,10 +18,10 @@ import javax.persistence.ManyToOne;
  * @author djgiu
  */
 @Entity
-public class Cidade {
-
+public class Cidade {    
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Resolvable(colName = "id")
     private Long id;
     @Resolvable(colName = "nome")

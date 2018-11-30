@@ -8,7 +8,6 @@ package br.edu.ifms.loja.cidade.bo;
 import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.cidade.dao.CidadeDAO;
 import br.edu.ifms.loja.cidade.datamodel.Cidade;
-import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ public class CidadeBO extends GenericBO<Cidade> {
     private CidadeDAO daoCidade;
 
     public CidadeBO() {
-        super(Cliente.class);
+        super(Cidade.class);
         daoCidade = new CidadeDAO();
     }
 
