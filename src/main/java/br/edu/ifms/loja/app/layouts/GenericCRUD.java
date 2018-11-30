@@ -20,7 +20,7 @@ public abstract class GenericCRUD<T> extends javax.swing.JDialog {
      * @param parent
      * Determina quem é a janela pai
      * @param modal
-     * Determina se a janela irá ser moral
+     * Determina se a janela irá ser modal
      * @param clazz
      * Classe de modelo de dados(datamodel) no qual a janela irá se moldar
      * @param cabecalhoTabela

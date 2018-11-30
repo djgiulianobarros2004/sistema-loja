@@ -11,6 +11,7 @@ import java.util.List;
 /**
  *
  * @author djgiu
+ * @param <T>
  */
 public class GenericBO<T> {
     

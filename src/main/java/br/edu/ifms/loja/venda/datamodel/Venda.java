@@ -7,6 +7,7 @@ package br.edu.ifms.loja.venda.datamodel;
 
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import br.edu.ifms.loja.usuario.datamodel.Usuario;
+import com.towel.el.annotation.Resolvable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,20 +25,24 @@ public class Venda {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Resolvable(colName = "id")
+    private Long id;
+    @Resolvable(colName = "numero")
     private Integer numero;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataVenda;
     @ManyToOne
+    @Resolvable(colName = "cliente")
     private Cliente cliente;
     @ManyToOne
+    @Resolvable(colName = "usuario")
     private Usuario usuario;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

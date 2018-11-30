@@ -34,13 +34,4 @@ public class CidadeDAO extends GenericDAO<Cidade> {
                 .getResultList();
     }
 
-    public List<Cidade> listarTodasasCidades() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("SELECT c ");
-        sb.append("FROM Cidade c ");
-
-        return em.createQuery(sb.toString())
-                .getResultList();
-    }
-
 }

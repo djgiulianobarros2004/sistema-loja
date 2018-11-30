@@ -5,7 +5,6 @@
  */
 package br.edu.ifms.loja.produto.view;
 
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -161,46 +160,6 @@ public class ProdutoFormulario extends javax.swing.JPanel {
 
     public void setCampoValor(JTextField campoValor) {
         this.campoValor = campoValor;
-    }
-
-    public JLabel getLabelDescricao() {
-        return labelDescricao;
-    }
-
-    public void setLabelDescricao(JLabel labelDescricao) {
-        this.labelDescricao = labelDescricao;
-    }
-
-    public JLabel getLabelMarca() {
-        return labelMarca;
-    }
-
-    public void setLabelMarca(JLabel labelMarca) {
-        this.labelMarca = labelMarca;
-    }
-
-    public JLabel getLabelModelo() {
-        return labelModelo;
-    }
-
-    public void setLabelModelo(JLabel labelModelo) {
-        this.labelModelo = labelModelo;
-    }
-
-    public JLabel getLabelQtde() {
-        return labelQtde;
-    }
-
-    public void setLabelQtde(JLabel labelQtde) {
-        this.labelQtde = labelQtde;
-    }
-
-    public JLabel getLabelValor() {
-        return labelValor;
-    }
-
-    public void setLabelValor(JLabel labelValor) {
-        this.labelValor = labelValor;
-    }
+    }   
     
 }

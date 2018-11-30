@@ -7,6 +7,7 @@ package br.edu.ifms.loja.itemvenda.datamodel;
 
 import br.edu.ifms.loja.produto.datamodel.Produto;
 import br.edu.ifms.loja.venda.datamodel.Venda;
+import com.towel.el.annotation.Resolvable;
 import java.math.BigDecimal;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,19 +24,24 @@ public class ItemVenda {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Resolvable(colName = "id")
+    private Long id;
+    @Resolvable(colName = "valorVenda")
     private BigDecimal valorVenda;
+    @Resolvable(colName = "qtdeVenda")
     private Integer qtdeVenda;
     @ManyToOne
+    @Resolvable(colName = "produto")
     private Produto produto;
     @ManyToOne
+    @Resolvable(colName = "venda")
     private Venda venda;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

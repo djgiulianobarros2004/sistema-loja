@@ -5,6 +5,7 @@
  */
 package br.edu.ifms.loja.app.view;
 
+import br.edu.ifms.loja.venda.view.JanelaFrenteDeCaixa;
 import javax.swing.JInternalFrame;
 
 /**
@@ -14,6 +15,7 @@ import javax.swing.JInternalFrame;
 public class JanelaInternaVendas extends javax.swing.JInternalFrame {
 
     private static JanelaInternaVendas janelaInternaVendas;
+    private static JanelaFrenteDeCaixa janelaFrenteDeCaixa;
     
     private JanelaInternaVendas() {
         initComponents();
@@ -42,6 +44,11 @@ public class JanelaInternaVendas extends javax.swing.JInternalFrame {
         botaoRelatorios = new javax.swing.JButton();
 
         botaoFrenteDeCaixa.setText("Frente de Caixa");
+        botaoFrenteDeCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFrenteDeCaixaActionPerformed(evt);
+            }
+        });
 
         botaoRelatorios.setText("Relatórios");
 
@@ -68,6 +75,10 @@ public class JanelaInternaVendas extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoFrenteDeCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFrenteDeCaixaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoFrenteDeCaixaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

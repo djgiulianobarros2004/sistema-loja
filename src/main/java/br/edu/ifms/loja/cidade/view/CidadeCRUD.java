@@ -27,7 +27,6 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
 
     public CidadeCRUD(Frame parent, boolean modal) {
         super(parent, modal, Cidade.class, new String[]{"id", "nome", "uf.nome"});
-
         cidadeBO = new CidadeBO();
         ufBO = new UfBO();
         carregarTabela();
@@ -95,7 +94,7 @@ public class CidadeCRUD extends GenericCRUD<Cidade> {
     @Override
     protected List<Cidade> carregarListaParaTabela() {
         carregarComboBoxUF();
-        return cidadeBO.listarTodasasCidades();
+        return cidadeBO.listarTodos();
     }
 
     @Override

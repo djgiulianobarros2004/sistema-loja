@@ -3,7 +3,6 @@ package br.edu.ifms.loja.cliente.view;
 import br.edu.ifms.loja.app.layouts.GenericCRUD;
 import br.edu.ifms.loja.cliente.bo.ClienteBO;
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
-import br.edu.ifms.loja.cliente.datamodel.Cliente_;
 import java.awt.Frame;
 import java.sql.SQLException;
 import java.util.List;

@@ -10,7 +10,6 @@ import br.edu.ifms.loja.cidade.datamodel.Cidade;
 import br.edu.ifms.loja.uf.bo.UfBO;
 import br.edu.ifms.loja.uf.datamodel.Uf;
 import com.towel.combo.swing.ObjectComboBoxModel;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ComboBoxUFCidade extends javax.swing.JPanel {
     private ObjectComboBoxModel<Uf> ufModel;
     private ObjectComboBoxModel<Cidade> cidadeModel;
 
-    public ComboBoxUFCidade() throws SQLException {
+    public ComboBoxUFCidade() {
         initComponents();
         ufBO = new UfBO();
         cidadeBO = new CidadeBO();
@@ -61,7 +60,7 @@ public class ComboBoxUFCidade extends javax.swing.JPanel {
         if (cidade == null) {
             return;
         }
-        
+
         ufModel.setSelectedObject(cidade.getUf());
         carregarCidades(cidade.getUf());
         cidadeModel.setSelectedObject(cidade);
@@ -84,6 +83,11 @@ public class ComboBoxUFCidade extends javax.swing.JPanel {
         jLabel1.setText("UF:");
 
         comboBoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxUF.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxUFItemStateChanged(evt);
+            }
+        });
         comboBoxUF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxUFActionPerformed(evt);
@@ -110,21 +114,27 @@ public class ComboBoxUFCidade extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(comboBoxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel2)
-                .addComponent(comboBoxUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(comboBoxUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBoxUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxUFActionPerformed
+
+    }//GEN-LAST:event_comboBoxUFActionPerformed
+
+    private void comboBoxUFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxUFItemStateChanged
         Uf uf = ufModel.getSelectedObject();
         if (uf == null) {
             return;
         }
         carregarCidades(uf);
-    }//GEN-LAST:event_comboBoxUFActionPerformed
+    }//GEN-LAST:event_comboBoxUFItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
