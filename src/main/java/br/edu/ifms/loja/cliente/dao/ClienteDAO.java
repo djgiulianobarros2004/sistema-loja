@@ -15,12 +15,12 @@ public class ClienteDAO extends GenericDAO<Cliente> {
         EntityManager em = getEntityManager();
 
         StringBuilder consulta = new StringBuilder();
-        consulta.append("SELECT c From Cliente c ");
+        consulta.append("SELECT c ");
         consulta.append("FROM Cliente c ");
-        consulta.append("WHERE c.cpf LIKE %:cpf% ");
+        consulta.append("WHERE c.cpf LIKE :cpf ");
 
         return em.createQuery(consulta.toString())
-                .setParameter("cpf", cpf)
+                .setParameter("cpf", cpf + "%")
                 .getResultList();
     }
 
@@ -28,12 +28,12 @@ public class ClienteDAO extends GenericDAO<Cliente> {
         EntityManager em = getEntityManager();
 
         StringBuilder consulta = new StringBuilder();
-        consulta.append("SELECT c From Cliente c ");
+        consulta.append("SELECT c ");
         consulta.append("FROM Cliente c ");
-        consulta.append("WHERE c.nome LIKE %:nome% ");
+        consulta.append("WHERE c.nome LIKE :nome ");
 
         return em.createQuery(consulta.toString())
-                .setParameter("nome", nome)
+                .setParameter("nome", nome + "%")
                 .getResultList();
     }
 

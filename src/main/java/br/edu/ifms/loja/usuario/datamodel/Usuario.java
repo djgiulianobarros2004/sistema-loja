@@ -133,5 +133,10 @@ public class Usuario {
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
+
+    @Override
+    public String toString() {
+        return nome;
+    }    
    
 }

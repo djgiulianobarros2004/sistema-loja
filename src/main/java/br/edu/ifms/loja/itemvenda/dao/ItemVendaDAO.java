@@ -17,10 +17,8 @@ public class ItemVendaDAO extends GenericDAO<ItemVenda> {
     private GenericDAO daoGeneric;
 
     public ItemVendaDAO() {
-        super(ItemVenda.class); //chama o construtor da classe pai
+        super(ItemVenda.class);
+        //chama o construtor da classe pai
     }
-    
-    public void inserirItemVenda (ItemVenda itemVenda){
-        daoGeneric.inserir(itemVenda);
-    }
+
 }

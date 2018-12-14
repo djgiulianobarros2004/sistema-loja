@@ -8,6 +8,7 @@ package br.edu.ifms.loja.produto.bo;
 import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.produto.dao.ProdutoDAO;
 import br.edu.ifms.loja.produto.datamodel.Produto;
+import java.util.List;
 
 /**
  *
@@ -20,6 +21,10 @@ public class ProdutoBO extends GenericBO<Produto> {
     public ProdutoBO() {
         super(Produto.class);
         daoProduto = new ProdutoDAO();
+    }
+    
+    public List<Produto> buscarPorDescricao(String descricao) {
+        return daoProduto.buscarPorDescricao(descricao);
     }
 
 }

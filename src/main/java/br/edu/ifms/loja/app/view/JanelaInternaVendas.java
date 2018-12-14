@@ -5,7 +5,6 @@
  */
 package br.edu.ifms.loja.app.view;
 
-import br.edu.ifms.loja.venda.view.JanelaFrenteDeCaixa;
 import javax.swing.JInternalFrame;
 
 /**
@@ -15,22 +14,23 @@ import javax.swing.JInternalFrame;
 public class JanelaInternaVendas extends javax.swing.JInternalFrame {
 
     private static JanelaInternaVendas janelaInternaVendas;
-    private static JanelaFrenteDeCaixa janelaFrenteDeCaixa;
-    
+    private static FrenteDeCaixa janelaFrenteDeCaixa;
+
     private JanelaInternaVendas() {
         initComponents();
         setTitle("Vendas");
         setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
         setClosable(true);
+        janelaFrenteDeCaixa = new FrenteDeCaixa(null, true);
     }
 
-    public static JanelaInternaVendas getInstance(){
-        if(janelaInternaVendas == null){
+    public static JanelaInternaVendas getInstance() {
+        if (janelaInternaVendas == null) {
             janelaInternaVendas = new JanelaInternaVendas();
         }
         return janelaInternaVendas;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,7 +77,7 @@ public class JanelaInternaVendas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoFrenteDeCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFrenteDeCaixaActionPerformed
-        // TODO add your handling code here:
+        janelaFrenteDeCaixa.setVisible(true);
     }//GEN-LAST:event_botaoFrenteDeCaixaActionPerformed
 
 

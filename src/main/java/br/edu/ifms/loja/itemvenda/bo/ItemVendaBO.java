@@ -5,6 +5,7 @@
  */
 package br.edu.ifms.loja.itemvenda.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.itemvenda.dao.ItemVendaDAO;
 import br.edu.ifms.loja.itemvenda.datamodel.ItemVenda;
 
@@ -12,15 +13,13 @@ import br.edu.ifms.loja.itemvenda.datamodel.ItemVenda;
  *
  * @author djgiu
  */
-public class ItemVendaBO {
+public class ItemVendaBO extends GenericBO<ItemVenda> {
 
     private ItemVendaDAO daoItemVenda;
 
     public ItemVendaBO() {
+        super(ItemVenda.class);
         daoItemVenda = new ItemVendaDAO();
     }
 
-    public void inserirItemVenda(ItemVenda itemVenda) {
-        daoItemVenda.inserirItemVenda(itemVenda);
-    }
 }

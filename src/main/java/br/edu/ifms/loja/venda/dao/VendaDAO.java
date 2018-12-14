@@ -23,4 +23,5 @@ public class VendaDAO extends GenericDAO<Venda> {
     public void inserirVenda(Venda venda) {
         daoGeneric.inserir(venda);
     }
+
 }

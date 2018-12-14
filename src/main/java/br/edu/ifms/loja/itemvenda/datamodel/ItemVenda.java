@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -36,6 +37,9 @@ public class ItemVenda {
     @ManyToOne
     @Resolvable(colName = "venda")
     private Venda venda;
+    @Resolvable(colName = "total")
+    @Transient
+    private BigDecimal total;
 
     public Long getId() {
         return id;
@@ -75,6 +79,14 @@ public class ItemVenda {
 
     public void setVenda(Venda venda) {
         this.venda = venda;
+    }
+
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
     }
     
 }

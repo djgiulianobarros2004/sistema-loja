@@ -7,7 +7,6 @@ package br.edu.ifms.loja.app;
 
 import br.edu.ifms.loja.app.dao.FabricaDeGerenciadorDeEntidades;
 import br.edu.ifms.loja.app.view.JanelaPrincipal;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.PersistenceException;
